@@ -1,2 +1,1 @@
-
-# code for CSC8425 accessment
+code for CSC8425 accessment
