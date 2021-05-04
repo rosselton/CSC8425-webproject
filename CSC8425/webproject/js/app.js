@@ -13,8 +13,6 @@ server.listen(8080,function(){
     console.log("Server listening on port: 8080");
 });
 
-//var db = new sqlite3.Database('./database/employees.db');
-
 let db = new sqlite3.Database(':memory:', (err) => {
   if (err) {
     return console.error(err.message);
