@@ -1,2 +1,2 @@
-"# carpentries-programming-with-python" 
-# carpentries-programming-with-python
+
+# code for CSC8425 accessment
