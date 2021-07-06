@@ -3,8 +3,6 @@ var express = require('express');
 var http = require('http');
 var path = require("path");
 var bodyParser = require('body-parser');
-//var helmet = require('helmet');
-//var rateLimit = require("express-rate-limit");
 
 
 var app = express();
@@ -28,13 +26,16 @@ app.get('/', function(req,res){
   res.sendFile(path.join(__dirname,'../index.html'));
 });
 
+// add extra fields here as type TEXT
 db.run('CREATE TABLE IF NOT EXISTS emp(id TEXT, name TEXT)');
 
+/* these following functions will require editing to accept more or different field values */
 
 // View
 app.post('/view', function(req,res){
   db.serialize(()=>{
-    db.each('SELECT id ID, name NAME FROM emp WHERE id =?', [req.body.id], function(err,row){     //db.each() is only one which is funtioning while reading data from the DB
+    db.each('SELECT id ID, name NAME FROM emp WHERE id =?', [req.body.id], function(err,row){     
+  
       if(err){
         res.send("Error encountered while displaying");
         return console.error(err.message);
