@@ -102,9 +102,4 @@ app.get('/close', function(req,res){
   });
 });
 
-/* db.close((err) => {
-  if (err) {
-    return console.error(err.message);
-  }
-  console.log('Close the database connection.');
-}); */
+
